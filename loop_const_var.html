@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <script>
+      const letters = ["a", "b", "c"];
+     //here not throw error ifect x is const variable becouse of in every iteration it will removed from memory and new declare x with new scope
+    //   for (const x of letters) {
+    //     console.log(x);
+    //   }
+
+       // it will throw error becouse of in every iteration it will try to increament in const i variable
+    //   for (const i=0;i<3;i++) {
+    //     console.log(letters[i]);
+    //   }
+
+
+// it will not  throw error becouse of in every iteration it will not change  in const i variable and every iteration in new scope new const i variable wil declared
+
+// for (const i=0;i<3;) {
+//         console.log(letters[i]);
+//       }
+     
+
+
+// function fun(){
+       
+//        console.log(j) //reference error
+//        let j;
+//        j=5;
+//      }
+     function fun1(){
+       
+       console.log(j) //undefined
+       var j;
+       j=5;
+     }
+     fun1()
+
+      fun()
+    </script>
+    </body>
+</html>

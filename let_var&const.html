@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+        <script>
+//    Redeclaring an variable declared with var is allowed anywhere in a program:
+// Redeclaring an variable  with const and let, in another scope, or in another block, is allowed:
+
+     function fun(){
+            let a="hello";
+            {
+                let a="hi";
+                // var a="hi";  //it will throw error becouse of this a become function scop so that this try to re declare a 
+                console.log(a);
+            }
+            console.log(a);
+        }
+
+        function fun1(){
+            var a="hello";
+            {
+                // let a="hi"; //not throw error
+                var a="hi";  //not throw error
+                console.log(a);
+            }
+            console.log(a);
+        }
+        fun1();
+
+    </script>
+    </body>
+</html>

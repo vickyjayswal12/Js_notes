@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let str = "this is my web";
+      //   for(let i=0;i<str.length;i++){
+      //       console.log(str[i])
+      //   }
+      let ar = [1, 6, 3, 4, 5];
+      let arstr = ["this", "is", "my"];
+
+      //for each can be use in erray,map,set and
+      //array iterating:--
+      //     str.forEach((element) => {    // array iterating method nor work in string
+      //     console.log(element);
+      //   });
+
+      //   array iterating mathod console.log(ar.slice(1,4))
+
+      //   ar.forEach((element) => {     //it will not return new array
+      //     console.log(element);
+      //   });
+      //   let ar1 = ar.map((ele) => {
+      //     if (ele > 2) { let ar = [1, 6, 3, 4, 5];
+      //      return ele * 2;
+      //     }
+      //     else{
+      //         return ele;
+      //     }
+      //   });
+      //   console.log(ar1);
+      //   let ar2 = ar.filter((ele) => ele > 2);
+      //   console.log(ar2);
+
+      //   The every() method checks if all array values pass a test than retun true else return false
+      // exm:
+      //     const numbers = [45, 4, 9, 16, 25];
+      // let allOver18 = numbers.every(myFunction);
+
+      // function myFunction(value, index, array) {
+      //   return value > 18;
+      // }
+      //and map and filter return new array
+
+      // let b=arstr.toString();
+      // console.log(arstr.toString());
+      // console.log(typeof(b));
+      // let c=arstr.at(2);
+      // console.log(typeof(c))
+
+      // The find() method returns the value of the first array element that passes a test function.
+
+      //     const numbers = [4, 9, 16, 25, 29];
+      // let first = numbers.find(myFunction);
+
+      // function myFunction(value, index, array) {
+      //   return value > 18;
+      // }
+
+      // The findIndex() method returns the index of the first array element that passes a test function.
+
+      //array modification method:--
+      // ar.push() return length of modified Array
+
+      // The shift() method removes the first array element and "shifts" all other elements to a lower index. and it will return deleted element
+
+      //     Using delete() leaves undefined holes in the array.
+
+      // Use pop() or shift() instead.
+
+      //array sorting mathod
+      //   The sort() method sorts an array alphabetically:
+      //   The reverse() method reverses the elements in an array:
+      //   By combining sort() and reverse(), you can sort an array in descending order:
+      //   exm of descending order sort
+      //   const fruits = ["Banana", "Orange", "Apple", "Mango"];
+      //   fruits.sort();
+      //   fruits.reverse();
+
+      // The difference between toSorted() and sort() is that the first method creates a new array, keeping the original array unchanged, while the last method alters the original array.
+      // const months = ["Jan", "Feb", "Mar", "Apr"];
+      // console.log(months.toSorted())
+
+      // sorting in numeric number
+      //       By default, the sort() function sorts values as strings.
+      //   This works well for strings ("Apple" comes before "Banana").
+      //   If numbers are sorted as strings, "25" is bigger than "100", because "2" is bigger than "1".
+      //   Because of this, the sort() method will produce incorrect result when sorting numbers.
+      //   You can fix this by providing a compare function:
+      // exm;
+      //   let ar5 = [1, 6, 100, 4, 5];
+      // ar5.sort()
+      // console.log(ar5)
+      // solved this
+      // ar5.sort((a,b)=>(a-b));
+      // ar5.sort(function(a,b){ return a-b})
+      // for descending
+      //   ar5.sort((a, b) => b - a);
+      //   console.log(ar5);
+
+      //working of comparision function
+      //     The Compare Function
+      // The purpose of the compare function is to define an alternative sort order.
+      // The compare function should return a negative, zero, or positive value, depending on the arguments:
+      // function(a, b){return a - b}
+      // When the sort() function compares two values, it sends the values to the compare function, and sorts the values according to the returned (negative, zero, positive) value.
+      // If the result is negative, a is sorted before b.
+      // If the result is positive, b is sorted before a.
+      // If the result is 0, no changes are done with the sort order of the two values.
+
+      // slice vs splice *******************
+
+      // ar.splice(2,2,10); // it will return deleted element and do wprk in existing array
+      // let ar2=ar.slice(1,4); it will new array some portion of existing array
+      // console.log(ar)
+      // console.log(ar2)
+      // console.log( ar.splice(2,2,10))
+      // console.log(ar.slice(1,4)) // last position not include
+
+      // let str1=str.splice(2,2,10);  splice not work in string
+      // console.log(str1)
+
+      //string********
+      5 + null; // returns 5         because null is converted to 0
+      // "5" + null  // returns "5null"   because null is converted to "null"
+      // "5" + 2     // returns "52"      because 2 is converted to "2"
+      // "5" - 2     // returns 3         because "5" is converted to 5
+      // "5" * "2"   // returns 10        because "5" and "2" are converted to 5 and 2
+      // str[0]="a"; // acces only read but it will work n array
+      // console.log(str);
+
+      // console.log(str.slice(1,4)) //slice also work in string
+
+      // substring() is similar to slice().
+      // The difference is that start and end values less than 0 are treated as 0 in substring().
+
+      // substr() is similar to slice().
+      // The difference is that the second parameter specifies the length of the extracted part.
+
+      // console.log(str.substr(1,5));
+      // console.log(str.substr(-1,5)); //minus is start from end of string
+
+      let text = "Hello" + " " + "World!";
+      let text1 = "Hello".concat(" ", "World!");
+      //    both work same
+
+      let t1 = "      Hello World!      ";
+      let t2 = text1.trim();
+      //   console.log(t2);
+      // The trimStart() met5 + null    // returns 5         because null is converted to 0
+      // "5" + null  // returns "5null"   because null is converted to "null"
+      // "5" + 2     // returns "52"      because 2 is converted to "2"
+      // "5" - 2     // returns 3         because "5" is converted to 5
+      // "5" * "2"   // returns 10        because "5" and "2" are converted to 5 and 2hod works like trim(), but removes whitespace only from the start of a string.
+      // and The trimEnd() method works like trim(), but removes whitespace only from the end of a string.
+
+      // The indexOf() method returns the index (position) of the first occurrence of a string in a string, or it returns -1 if the string is not found:
+      // he lastIndexOf() method returns the index of the last occurrence of a specified text in a string:
+
+      // Both methods accept a second parameter as the starting position for the search:
+      let s = str.indexOf("is", 3);
+
+      // The two methods, indexOf() and search(), are equal?
+
+      // They accept the same arguments (parameters), and return the same value?
+
+      // The two methods are NOT equal. These are the differences:
+
+      // The search() method cannot take a second start position argument.
+      // The indexOf() method cannot take powerful search values (regular expressions)
+
+      //   let s1 = str.search("is");
+      //   console.log(s1);
+
+      //math function
+      //here not throw error ifect x is const variable becouse of in every iteration it will removed from memory and bew declare x
+      // Math.round(x)	Returns x rounded to its nearest integer
+      // Math.ceil(x)	Returns x rounded up to its nearest integer
+      // Math.floor(x)	Returns x rounded down to its nearest integer
+      // Math.trunc(x)	Returns the integer part of x (new in ES6)
+      // Math.sign(x) returns if x is negative, null or positive:
+      // Math.abs(x) returns the absolute (positive) value of x:
+
+      // switch case
+      // in switch case we can default anywhere in switch block but it will always impement after checking every case
+
+      // common code block
+      // let tex;
+      // let day=4
+      // switch (day) {
+      //   case 4:
+      //   case 5: //here not throw error ifect x is const variable becouse of in every iteration it will removed from memory and bew declare x
+      //     tex = "Soon it is Weekend";
+      //     break;
+      //   case 0:
+      //   case 6:
+      //     tex = "It is Weekend";
+      //     break;
+      //   default:
+      //     tex = "Looking forward to the Weekend";
+      // }
+
+      // console.log(tex)
+
+      // If multiple cases matches a case value, the first case is selected.
+      // If no matching cases are found, the program continues to the default label.
+      // If no default label is found, the program continues to the statement(s) after the switch.
+      // Switch cases use strict comparison (===).
+
+      // let c=new Date().getDay()
+      // console.log(c)
+
+      // for loop scop in let
+      // let i =5;
+      // for(let i=0;i<10;i++)
+      // {
+      //   console.log(i)
+      // }
+      // console.log(i);
+      // let i =5;
+      // for(const i=0;i<10;i++)
+      // {
+      //   console.log(i) //increament throw error becouse const cant chqnge
+      // }
+      // console.log(i);
+
+      // in var
+      // var j=5;
+      // for(var j=0;j<10;j++)
+      // {
+      //   console.log(j)
+      // }
+      // console.log(j);
+
+      // for in
+      // for in in array return index and in object it will return objects key
+
+      // const person = {fname:"John", lname:"Doe", age:25};
+
+      // let te = "";
+      // for (let x in person) {
+      //   te += person[x];
+      // }
+      // for(let i in ar)
+      // {
+      //   console.log(i)
+      //   console.log(ar[i])
+
+      // }
+      // for(let i in str) // it will also work in string
+      // {
+      //   console.log(i)
+      //   console.log(str[i])
+
+      // }
+
+      //for of loop:----
+      // it will use for return value
+      // The JavaScript for of statement loops through the values of an iterable object.
+      // It lets you loop over iterable data structures such as Arrays, Strings, Maps, NodeLists, and more:
+      // const cars = ["BMW", "Volvo", "Mini"];
+
+      // let text5 = "";
+      // for (let x of cars) {
+      //   text5 += x;
+      // }
+
+      // we can access element of array through while or for loop
+      // const cars = ["BMW", "Volvo", "Saab", "Ford"];
+      // let i = 0;
+      // let text6 = "";
+
+      // while (cars[i]) {
+      //   text6 += cars[i];
+      //   i++;
+      // }
+      // console.log(text6)
+      5 + null; // returns 5         because null is converted to 0
+      // "5" + null  // returns "5null"   because null is converted to "null"
+      // "5" + 2     // returns "52"      because 2 is converted to "2"
+      // "5" - 2     // returns 3         because "5" is converted to 5
+      // "5" * "2"   // returns 10        because "5" and "2" are converted to 5 and 2
+
+      // break
+
+      // break statement also use exclude loot termination and swith case in block terminate with label
+      // label:{
+      //   console.log("hello");
+      //   break label;
+      //   console.log("print")
+      // }
+      // console.log('hi');
+
+      //set:---
+      // create empty set;
+      let s1 = new Set();
+      s1.add("a");
+      console.log(s1);
+      // covert array to se
+      let s2 = new Set(["a", "b", "d"]);
+      console.log(s2);
+      //we can use for each for iteration
+
+      //map:-----
+      const m1 = new Map();
+      //here use set to value according key
+      m1.set("apples", 500);
+      //get is use for get value of key
+      m1.get("apples");
+      //delete for deleting element of set
+      m1.delete("apples");
+      // in map for itearating use for Each loo in call back take two argument key and value
+      let texm2 = "";
+      const fruits = new Map([
+        ["apples", 500],
+        ["bananas", 300],
+        ["oranges", 200],
+      ]);
+      fruits.forEach(function (value, key) {
+        text += key + " = " + value;
+      });
+
+      // type conversion
+      // 1. string to number
+      // let x='5'  //is string not in number it will return nan
+      // let b=Number(x)
+      // let c=parseInt(x)
+      // let d=+x;//direct
+
+      // 5 + null    // returns 5         because null is converted to 0
+      // "5" + null  // returns "5null"   because null is converted to "null"
+      // "5" + 2     // returns "52"      because 2 is converted to "2"
+      // "5" - 2     // returns 3         because "5" is converted to 5
+      // "5" * "2"   // returns 10        because "5" and "2" are converted to 5 and 2
+
+      //ternsry operator in js
+      // const age = 26;
+      // const beverage = age >= 21 ? "Beer" : "Juice";
+      // console.log(beverage); // "Beer"
+      let z = null;
+      // console.log(z);
+      //null work as false
+      if (z) {
+        console.log("hi");
+      }
+
+      //optional chaining:---
+
+      // The optional chaining operator ?. takes the reference to its left and checks if it is undefined or null. If the reference is either of these nullish(null or undefine) values, the checks will stop and return undefined. Otherwise, the chain of access checks will continue down the happy path to the final value
+      //if answer not find than it will return undefined instead of error
+      // exm
+      let user = {
+        name: "John Doe",
+        dog: {
+          name: "tommy",
+        },
+      };
+      let Value = user.dog && user.dog.name; //first check dog key have or not than if have than assign value
+      let Value1 = user.dog?.name; //same as upper line
+      // console.log(Value, Value1);
+
+      // If the item to the left of ?? is nullish, the item to the right(of ??) will be returned.
+      // exm
+      // const meal = menu.breakfast?.waffles ?? "No Waffles Found."
+      let user1 = {
+        name: "John Doe",
+      };
+      let Value2 = user1.dog?.name ?? "sheru";
+      // console.log(Value2);
+
+      //nullis operator:====
+      // The ?? operator returns the first argument if it is not nullish (null or undefined). Otherwise it returns the second.
+      // exm
+      let name = null;
+      let name1="vj"
+      let text6 = "missing";
+      let result = name ?? text6;
+      let result1 = name1 ?? text6;
+      // console.log(result);
+      // console.log(result1);
+
+      //JavaScript Rest parameter:------
+      // is an improved way to handle function parameters, allowing us to more easily handle various inputs as parameters in a function. The rest parameter syntax allows us to represent an indefinite number of arguments as an array. With the help of a rest parameter, a function can be called with any number of arguments, no matter how it was defined.
+    //   function fun(a, b){
+    //     return a + b;
+    // }
+    // console.log(fun(1, 2)); // 3
+    // console.log(fun(1, 2, 3, 4, 5)); // 3 
+    
+    
+    // rest with function and other arguments
+function fun(a, b, ...c) {
+	console.log(`${a} ${b}`); //Mukul Latiyan
+	console.log(c); //[ 'Lionel', 'Messi', 'Barcelona' ]
+	console.log(c[0]); //Lionel
+	console.log(c.length); //3
+	console.log(c.indexOf('Lionel')); //0
+}
+//fun('Mukul', 'Latiyan', 'Lionel', 'Messi', 'Barcelona');
+
+//spread operator in js
+// if we assign existing array to new array than it will assign refference of existing array so that if we do any change in new array it will also chande existing array
+// exm
+// changed the original array
+// let arr = ['a', 'b', 'c'];
+// let arr2 = arr;
+
+// arr2.push('d');
+
+// console.log(arr2);
+// console.log(arr); 
+//even affected the original array(arr)
+
+// this will overcome by using slice and spread operator
+// spread operator for copying 
+// let arr = ['a', 'b', 'c'];
+// let arr2 = [...arr];
+
+// console.log(arr); 
+// [ 'a', 'b', 'c' ]
+
+// arr2.push('d'); 
+//inserting an element at the end of arr2
+
+// console.log(arr2); 
+// [ 'a', 'b', 'c', 'd' ]
+// console.log(arr);
+// [ 'a', 'b', 'c' ]
+
+
+// The following values evaluate to false (also known as Falsy values):
+
+// false
+// undefined
+// null
+// 0
+// NaN
+// the empty string ("")
+
+
+//imp*** if we not declare variable before initialise it will become global variable
+
+{
+  x="hello"
+}
+// console.log(x)
+//but in strict mode it will throw error
+
+
+//this key  word
+// in object in object function refernce own object
+const obj={
+  name:"John",
+  fun:function(){
+    return this;
+  }
+}
+console.log(obj.fun()) //return object
+console.log(obj.fun().name)
+
+const obj1={
+  name:"John",
+  fun:function(){
+    return this.name+" "+this.sn;
+  },
+  sn:"jaiswal"
+}
+console.log(obj1.fun())
+
+// we can also call another object using another object function using call and apply function so that this refer parameter passed object but use owner function
+const obj3={
+  name:"vj",
+  sn:"js"
+}
+console.log(obj1.fun.call(obj3))
+
+//diference between call and apply is that in except object other parameter passed through separeted coma valu but in apply it will send arary
+const person = {
+  fullName: function(city, country) {
+    return this.firstName + " " + this.lastName + "," + city + "," + country;
+  }
+}
+
+const person1 = {
+  firstName:"John",
+  lastName: "Doe"
+}
+
+person.fullName.apply(person1, ["Oslo", "Norway"]);
+person.fullName.call(person1, "Oslo", "Norway");
+
+
+// bind:---
+// When a function is used as a callback, this is lost.
+
+// This example will try to display the person name after 3 seconds, but it will display undefined instead:
+
+// Example
+// const person = {
+//   firstName:"John",
+//   lastName: "Doe",
+//   display: function () {
+//     let x = document.getElementById("demo");
+//     x.innerHTML = this.firstName + " " + this.lastName;
+//   }
+// }
+
+// setTimeout(person.display, 3000);
+// it will overcome using bind method
+
+
+  //  note::--- 
+  //Variables created without a declaration keyword (var, let, or const) are always global, even if they are created inside a function.
+//   Variable Lifetime
+// Global variables live until the page is discarded, like when you navigate to another page or close the window.
+// Local variables have short lives. They are created when the function is invoked, and deleted when the function is finished.
+
+// and also for this in arrow function
+// In regular functions the this keyword represented the object that called the function, which could be the window, the document, a button or whatever.
+// With arrow functions the this keyword always represents the object that defined the arrow function.
+
+   
+   
+   
+   
+   
+   </script>
+  </body>
+</html>

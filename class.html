@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <script>
+      class student {
+        constructor(fn, ln) {
+          this.fn = fn;
+          this.ln = ln;
+        }
+        set_age(age) {
+          this.age = age;
+        }
+        get_age() {
+          return this.age;
+        }
+      }
+
+      let st1 = new student("vj", "jaiswal");
+      st1.set_age(20);
+      console.log(`${st1.fn} ${st1.ln}`);
+      console.log(st1.get_age());
+
+      //inheritence
+      class batch extends student {
+        constructor(fn, ln, bno) {
+          super(fn, ln);
+          this.bno = bno;
+        }
+        get_batch() {
+          return this.bno;
+        }
+      }
+
+      let st2 = new batch("rv", "verma", 20);
+      st2.set_age(30);
+      console.log(`${st2.fn} ${st2.ln}`);
+      console.log(st2.get_age());
+      console.log(st2.get_batch());
+
+
+      //You cannot use the class yet.
+//myCar = new Car("Ford") will raise an error.
+
+// class Car {
+//   constructor(brand) {
+//     this.carname = brand;
+//   }
+// }
+
+// //Now you can use the class:
+// const myCar = new Car("Ford")
+    </script>
+    </body>
+</html>
