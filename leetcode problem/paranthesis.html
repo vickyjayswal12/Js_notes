@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let s="()[]{}";
+         let map=new Map([
+        ['(',')'],
+        ['{','}'],
+        ['[',']']
+    ])
+  let stack=[];
+  stack.push(s[0])
+    for(let i=1;i<s.length;i++){
+        if(stack.length!=0){
+        let temp=stack.pop();
+        stack.push(temp)   // if not write than push two times if mathes not match also pop
+        console.log(temp,s[i]);
+        console.log(map.get(temp))
+      if(s[i]==map.get(temp))
+      {
+          stack.pop();
+      }
+      else{
+          stack.push(s[i]);
+      }
+    }
+    else{
+        stack.push(s[i]);
+    }
+}
+    if(stack.length==0)
+    {
+       console.log("true");
+    }
+    else {
+        console.log("false");
+    }
+    </script>
+</body>
+</html>

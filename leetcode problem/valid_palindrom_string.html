@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /**
+ * @param {string} s
+ * @return {boolean}
+ */
+s= "A man, a plan, a canal: Panama"
+var isPalindrome = function(s) {
+ let str=s.replace(/[^A-Za-z0-9]/g,'').toLowerCase(); //it replace all character exclude(a-z,A-z,0-9) with '' and covert to lovercase all character
+ let str1=str.split('').reverse().join('') //first covert str to array than revers array than after convert arr to str
+  if(str!=str1)
+  {
+      return false;
+  }
+  else
+  {
+      return true
+  }
+};
+    </script>
+</body>
+</html>

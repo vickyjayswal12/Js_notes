@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /**
+ * @param {string} pattern
+ * @param {string} s
+ * @return {boolean}
+ */
+var wordPattern = function(pattern, s) {
+    let map=new Map()
+    let strar=s.split(' ');
+    // if(strar.length!=s.length)
+    // {
+    //     return false;
+    // }
+    console.log(strar);
+    let i=0;
+    while(i<pattern.length)
+    {
+        if(map.get(pattern[i]))
+        {
+            if(strar[i]!=map.get(pattern[i]))
+            {
+               return false;
+            }
+        }
+        else{
+            map.set(pattern[i],strar[i]);
+        }
+        i++;
+    }
+    return true;
+};
+
+let pattern= "abba";
+let s = "dog cat cat dog"
+wordPattern(pattern,s);
+
+// pattern =
+// "abba"
+// s =
+// "dog dog dog dog";
+// give wrong answer
+
+// modified function
+/**
+ * @param {string} pattern
+ * @param {string} s
+ * @return {boolean}
+ */
+//  var wordPattern = function(pattern, s) {
+//     let map=new Map()
+//     let strar=s.split(' ');
+//     if(strar.length!=pattern.length)
+//     {
+//         return false;
+//     }
+//     let i=0;
+//     while(i<pattern.length)
+//     {
+//         if(map.get(pattern[i]))
+//         {
+//             if(strar[i]!=map.get(pattern[i]))
+//             {
+//                return false;
+//             }
+//         }
+//         else{
+//             let values=[...map.values()]
+//             if(values.includes(strar[i])) //if values alredy
+//             {
+//                 return false;
+//             }
+//             else{
+//             map.set(pattern[i],strar[i]);
+//             }
+//         }
+//         i++;
+//     }
+//     return true;
+// };
+    </script>
+</body>
+</html>

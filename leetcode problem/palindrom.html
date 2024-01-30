@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let rev=0;
+        let x=-123;
+    let no=x;
+    while(no>0)
+    {
+        let digit=no%10;
+        rev=(rev*10)+digit;
+        no=Math.floor(no/10);
+    }
+  console.log(rev)
+
+  //another
+ 
+var isPalindrome = function(x) {
+    let str= x.toString()
+    let newar=str.split('')//array
+    console.log(typeof(newar))
+    let rev_ar=newar.reverse();
+    let rev_str=rev_ar.join("");
+    console.log(rev_str);
+
+};
+isPalindrome(x);
+    </script>
+</body>
+</html>

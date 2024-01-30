@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+        <button id="bt">stop console</button>
+        <script>
+        // let a=setTimeout(()=>{console.log("hello")},5000)
+        // console.log(a)
+        let b=setInterval(()=>{console.log("hello")},1000)
+        document.getElementById('bt').addEventListener("click",()=>{
+            //   clearTimeout(a);
+              clearInterval(b);
+        })
+
+        let str="i sam vicky"
+        let ar=str.split(" ");
+        console.log(ar);
+        console.log(typeof(ar));
+    </script>
+    </body>
+</html>

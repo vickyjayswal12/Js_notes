@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /**
+ * Definition for singly-linked list.
+ * function ListNode(val, next) {
+ *     this.val = (val===undefined ? 0 : val)
+ *     this.next = (next===undefined ? null : next)
+ * }
+ */
+/**
+ * @param {ListNode} list1
+ * @param {ListNode} list2
+ * @return {ListNode}
+ */
+var mergeTwoLists = function(list1, list2) {
+    let temp=new ListNode(0,null);
+   let current_list=temp;//for reference of temp node
+   if(list1==null&&list2==null)
+   {
+       return null;
+   }
+   if(list1==null)
+   {
+       return list2;
+   }
+
+   if(list2==null)
+   {
+       return list1;
+   }
+
+   while(list1!=null&&list2!=null)
+   {
+       if(list1.val<list2.val){
+           current_list.next=list1;
+           list1=list1.next;
+       }
+       else{
+           current_list.next=list2;
+           list2=list2.next;
+       }
+       current_list=current_list.next;
+   }
+   //if list1 all node travel
+   while(list1!=null)
+   {
+        current_list.next=list1;
+        list1=list1.next;
+        current_list=current_list.next;
+   }
+   //if list2 all node travel
+   while(list2!=null)
+   {
+        current_list.next=list2;
+        list2=list2.next;
+        current_list=current_list.next;
+   }
+
+    return temp.next;
+};
+    </script>
+</body>
+</html>

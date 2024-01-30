@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        nums =[2,2,1];
+         let arr=[];
+    for(i=0;i<nums.length;i++)
+    {
+        if(arr.includes(nums[i]))
+        {
+            delete arr[arr.indexOf(nums[i])];
+        }
+        else
+        {
+            arr.push(nums[i]);
+        }
+        console.log(arr)
+    }
+    let a=arr;
+    arr.forEach((val)=>{
+        if(val!=null)
+        {
+            a=val;
+        }
+    })
+    console.log(a)
+    </script>
+</body>
+</html>

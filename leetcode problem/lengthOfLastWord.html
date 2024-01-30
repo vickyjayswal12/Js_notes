@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+
+// we can remove backspace from string from start and end using trim;
+// s.trim()
+        s="Hello World"; //in s can be multiple spaces
+        let last_str="";
+        let a=0;
+  for(let i=s.length-1;i>=0;i--)
+  {
+   
+    //   console.log(a,s[i])
+      if(s[i]!=" ")
+      {
+        console.log(a,s[i]);
+          last_str=last_str+s[i];
+          a=1;
+      }
+      if(a==1&&s[i]==" ")
+      {
+          console.log(last_str.length);
+          break;
+      }
+  }
+//   console.log(last_str);
+
+
+
+//best mathos 
+s="i   name     moon      "
+var lengthOfLastWord = function(s) {
+    let trimmedString = s.trim();
+    
+    return trimmedString.length - trimmedString.lastIndexOf(' ') - 1;
+};
+    </script>
+</body>
+</html>

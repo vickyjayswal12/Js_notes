@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Document</title>
-    </head>
-    <body>
-        <script>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
       const letters = ["a", "b", "c"];
      //here not throw error ifect x is const variable becouse of in every iteration it will removed from memory and new declare x with new scope
     //   for (const x of letters) {
@@ -24,7 +24,12 @@
 // for (const i=0;i<3;) {
 //         console.log(letters[i]);
 //       }
-     
+    // in for of loop
+    for(const x of letters)
+    {
+      console.log(x);
+    } 
+// on for ... of loops, you create a variable to keep the value of the iterable (list) to use during that iteration of the loop... when it loops over, a new variable will be created, with the same name and different value. it does not try to reassign, it just releases the variable that was used in the last iteration and creates a whole new one.
 
 
 // function fun(){
@@ -43,5 +48,5 @@
 
       fun()
     </script>
-    </body>
+  </body>
 </html>

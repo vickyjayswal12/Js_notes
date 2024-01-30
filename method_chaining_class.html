@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+// The use of return this in each method of the Calculator class is a design choice that enables method chaining. Method chaining allows you to call multiple methods on an object in a single statement, providing a more concise and fluent syntax.
+// Here's an example of how you might use method chaining with the Calculator class:
+
+// The use of return this in each method of the Calculator class is a design choice that enables method chaining. Method chaining allows you to call multiple methods on an object in a single statement, providing a more concise and fluent syntax.
+
+// Here's an example of how you might use method chaining with the Calculator class:
+// const calculator = new Calculator(2);
+// calculator.add(3);
+// calculator.multiply(4);
+// calculator.subtract(1);
+// calculator.divide(2);
+// calculator.power(2);
+// const result = calculator.getResult();
+// console.log(result); // Output: 36
+
+
+// javascript
+// Copy code
+const result = new Calculator(2)
+  .add(3)
+  .multiply(4)
+  .subtract(1)
+  .divide(2)
+  .power(2)
+  .getResult();
+
+console.log(result); // Output: 36
+// In the above example, each method modifies the result property of the Calculator instance and returns this. This allows you to chain subsequent method calls onto the same instance.
+
+// Without return this, you wouldn't be able to chain methods, and you would have to use a temporary variable for each step:
+
+
+        class Calculator {
+  constructor(value) {
+    this.result = value;
+  }
+  add(value) {
+    this.result += value;
+    return this;
+  }
+
+  subtract(value) {
+    this.result -= value;
+    return this;
+  }
+
+  multiply(value) {
+    this.result *= value;
+    return this;
+  }
+
+  divide(value) {
+    if (value === 0) {
+      throw new Error('Division by zero is not allowed');
+    }
+    this.result /= value;
+    return this;
+  }
+
+  power(value) {
+    this.result = Math.pow(this.result, value);
+    return this;
+  }
+
+  getResult() {
+    return this.result;
+  }
+}
+    </script>
+</body>
+</html>

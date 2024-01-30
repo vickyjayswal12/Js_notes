@@ -525,10 +525,213 @@ person.fullName.call(person1, "Oslo", "Norway");
 // With arrow functions the this keyword always represents the object that defined the arrow function.
 
    
+  //  object ;**********
+   //note;--- array and object are passed references like if existing object we try assing to new array than it pass reference means both object are same if we change in new object than existing object also change
+
+//    let ob={
+//     id : 42,
+//     fullname : 'John Doe'
+//    }
+//    let ob1=ob;
+//    ob1.age=30;
+//    console.log(ob)
    
+//   //  Any JavaScript object can be converted to an array using Object.values():
+
+// const person2 = {
+//   name: "John",
+//   age: 30,
+//   city: "New York"
+// };
+
+// const myArray = Object.values(person2); //array of value
    
-   
-   
-   </script>
+// JSON.stringify() is use to cnvert js object and arra to in string
+// const arr = ["John", "Peter", "Sally", "Jane"];
+
+// let myString = JSON.stringify(arr);
+// console.log(myString[0])
+
+
+// object also have getter and setter like in class
+// const person3 ={
+//   name:"vj",
+//   set_age:function(age){
+//     this.age=age;
+//   },
+//   get_age:function(){
+//     return this.age;
+//   }
+// }
+// person3.set_age("35");
+// console.log(person3.get_age());
+
+// using get and set:--
+// const person3 ={
+//   name:"vj",
+//   set age(age){
+//     this.age=age;
+//   },
+//   get age(){
+//     return this.age;
+//   }
+// }
+// person3.age("35");
+// console.log(person3.age);
+
+
+// The Object.defineProperty() method in JavaScript is a Standard built-in object which defines a new property directly on an object or it can also modify the existing property of an object and returns the object. 
+
+// Syntax:
+
+// Object.defineProperty(obj, prop, descriptor)
+// Parameter: This method accepts three parameters as mentioned above and described below:
+
+// Obj: This parameter holds the Object on which the user is going to define the property.
+// Prop: This parameter holds the name of a property that is going to be defined or modified.
+// Descriptor: This parameter holds the descriptor for the property being defined or modified.
+// Return Value: This method returns the object which is passed as the argument to the function. 
+// const geek1 = {}; 
+// Object.defineProperty(geek1, 'prop1', { 
+// 	value: 65, 
+// 	writable: false
+// }); 
+// geek1.prop1 = 7; 
+// console.log(geek1.prop1); 
+
+// const geek2 = {}; 
+// Object.defineProperty(geek2, 'prop2', { 
+
+// 	value: 54, 
+// 	value: 23, 
+// 	value: 12 * 9, 
+// }); 
+// geek2.prop2; 
+// console.log(geek2.prop2);
+
+//constructor function as a object
+
+// function Person(first, last, age, eye) {
+//   this.firstName = first;
+//   this.lastName = last;
+//   this.age = age;
+//   this.eyeColor = eye;
+// }
+// const myFather = new Person("John", "Doe", 50, "blue");
+// we cant add another propert
+
+// Person.nationality = "English"; //error
+// but it can add using prototype properties
+// Person.prototype.nationality = "English";
+
+//new keyword create object
+
+// new String()    // A new String object
+// new Number()    // A new Number object
+// new Boolean()   // A new Boolean object
+// new Object()    // A new Object object
+// new Array()     // A new Array object
+// new RegExp()    // A new RegExp object
+// new Function()  // A new Function object
+// new Date()      // A new Date object
+
+
+
+//we cant use for of loop for obj iterating
+
+// note::--
+// diff between for and for in
+
+// Both for...in and for...of statements iterate over something. The main difference between them is in what they iterate over. The for...in statement iterates over the enumerable string properties of an object, while the for...of statement iterates over values that the iterable object defines to be iterated over.
+// can use by Object.entries(object1)
+// exm
+// const object1 = {
+//   a: 'somestring',
+//   b: 42,
+// };
+
+// for (const [key, value] of Object.entries(object1)) {
+//   console.log(`${key}: ${value}`);
+// }
+
+
+
+
+//set******************
+
+let se=new Set();
+// console.log(typeof(se));
+//set is also object becouse new key
+
+// iterating set using for of loop
+const letters = new Set(["a","b","c","a"]);
+const no = new Set(["a","b","c","a"]);
+// for (const letter of letters){
+//   console.log(letter)
+// }
+letters.forEach((v)=>{
+  console.log(v);
+})
+
+
+// map not work in not iterating data type like map and set
+// let set1=no.map((v)=>{
+//   return v*2;
+// })
+// console.log(set1)
+// The values() method returns an Iterator object containing all the values in a Set
+
+//map************
+
+// Create a Map
+const fruits1 = new Map();
+
+// Set Map Values
+fruits1.set("apples", 500);
+fruits1.set("bananas", 300);
+fruits1.set("oranges", 200);
+fruits1.get("apples")
+//iterating
+// The forEach() method invokes a callback for each key/value pair in a Map:
+let text7 = "";
+fruits.forEach (function(value, key) {
+  text += key + ' = ' + value;
+})
+
+//entries using
+// The entries() method returns an iterator object with the [key,values] in a Map:
+
+// Example
+// List all entries
+let text8 = "";
+// x is [key ,value]
+for (const x of fruits.entries()) {
+  text8 += x;
+}
+// console.log(text8)
+// he keys() method returns an iterator object with the keys in a Map:
+// The values() method returns an iterator object with the values in a Map:
+
+// using for Of
+// for(const [key,value] of fruits)
+// {
+//   console.log(`${key}==${value}`);
+// }
+//  
+
+//using map iterate and create new map  not possible
+// const map2=fruits1.map((k,v)=>
+// {
+//   return v*2;
+// })
+// console.log(map2)
+
+
+
+// console.log(alert("hii"));
+// console.log(confirm("are you ready"));
+// console.log(prompt("enter your age"))
+
+</script>
   </body>
 </html>

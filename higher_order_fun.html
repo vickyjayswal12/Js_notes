@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+        <script>
+        //higher order function is function which take another fun as a argument and return a another function
+        // higher order function use to achive dry(do not repeat) in js programmming
+        function a(){
+
+        }
+        function b(a){
+            a();
+        }
+
+
+
+
+
+        // in above exm b is higher order function and a is call back function 
+        // let we exm which we have to find all array's elements area,diameter and circumference(parimiti)
+        const radius=[2,4,5,1];
+        // function area(radius){
+        //     const output=[];
+        //     for(let i=0;i<radius.length;i++)
+        //     {
+        //         output.push(Math.PI*radius[i]*radius[i])
+        //     }
+        //     return output;
+        // }
+
+        // function circumference(radius){
+        //     const output=[];
+        //     for(let i=0;i<radius.length;i++)
+        //     {
+        //         output.push(2*Math.PI*radius[i])
+        //     }
+        //     return output;
+        // }
+
+        // function diameter(radius){
+        //     const output=[];
+        //     for(let i=0;i<radius.length;i++)
+        //     {
+        //         output.push(Math.PI*radius[i]*radius[i])
+        //     }
+        //     return output;
+        // }
+        // console.log(area(radius))
+        // console.log(circumference(radius))
+        // console.log(diameter(radius))
+
+
+        
+        // in above example logic in all almost same but in we are reapeting itself
+        // we can do through higher order function
+         function clculate(radius,logic){
+            const output=[];
+            for(let i=0;i<radius.length;i++)
+            {
+                output.push(logic(radius[i]));
+            }
+            return output;
+         }
+
+         function area(r)
+         {
+            return Math.PI*r*r;
+         }
+
+         function circumference(r)
+         {
+            return 2*Math.PI*r;
+         }
+         function diameter(r)
+         {
+            return 2*r;
+         }
+         console.log(clculate(radius,area));                 
+         console.log(clculate(radius,circumference)); 
+         console.log(clculate(radius,diameter));
+
+         //here calculate is higher order function and area,diameter and circumference is callback function
+         //this will use in map in react 
+        //  let new_arr=arr.map(logic)
+        //calculate area using map
+        // const area=radius.map(area)
+
+        //prototype is use to create in build methos let exm
+
+        
+        // Array.prototype.clculate=function(logic){
+        //     const output=[];
+        //     for(let i=0;i<this.length;i++)
+        //     {
+        //         output.push(logic(this[i]));
+        //     }
+        //     return output;
+        //  }
+         //this is like map it will work in every array in program
+        //  const a=radius.clculate(area);//as map 
+    </script>
+
+    </body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+        <p>click</p>
+        <p>p2</p>
+        <script src="https://code.jquery.com/jquery-3.7.1.js"
+            integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+            crossorigin="anonymous"></script>
+        <!-- $(selector).action(callback function); -->
+        <script>
+        $('p').click(()=> // it will excuate any p clicked
+        {
+            console.log("clicked")
+        })
+
+        //for id
+        $('#id_name').click()
+        //for class
+        $('.class_name').click();
+
+        // j query shoul be excute after all docunent ready 
+        // some time page is big so that before all document load jsquery applied so that all jquery shoul be written in after document ready 
+    // exm
+
+    $(document).ready(()=>{
+        $('p').click(()=> // it will excuate any p clicked
+        {
+            console.log("clicked")
+        })
+
+    }
+    )
+    </script>
+
+    </body>
+</html>

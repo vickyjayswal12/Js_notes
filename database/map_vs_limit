@@ -1,0 +1,4 @@
+As stated in my comment for Martin Smith's answer above, there are products that support both, LIMIT and TOP (as you can see here). The difference is that TOP only selects the first n records, but LIMIT allows the definition of an offset to retrieve a specific range of records:
+
+SELECT * FROM ... LIMIT 5 OFFSET 10
+This statement selects the 5 records, after skipping 10 records and this isn't possible with TOP

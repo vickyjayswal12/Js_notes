@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // prototype is use to create method of function instance just like that class'method
+    /**
+ * @param {number[]} nums
+ * @return {void}
+ */
+var ArrayWrapper = function(nums) {
+    this.nums=nums;
+    
+};
+
+/**
+ * @return {number}
+ */
+ArrayWrapper.prototype.valueOf = function() {
+    return this.nums.reduce((ini,curr)=>ini+curr,0)
+}
+
+/**
+ * @return {string}
+ */
+ArrayWrapper.prototype.toString = function() {
+    return `[${this.nums.join(",")}]`;       //also we can use JSON.stringify(this.array)
+    
+}
+
+/**
+ * const obj1 = new ArrayWrapper([1,2]); //instance of ArrayWrapper
+ * const obj2 = new ArrayWrapper([3,4]);
+ * obj1 + obj2; // 10
+ * String(obj1); // "[1,2]"
+ * String(obj2); // "[3,4]"
+ */
+    
+    
+    </script>
+</body>
+</html>

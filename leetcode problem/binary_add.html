@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /**
+ * @param {string} a
+ * @param {string} b
+ * @return {string}
+ */
+var addBinary = function (a, b) {
+    let res = "";
+    let h = 0;
+    let x=a.length-1,y=b.length-1;
+        while (x >= 0 && y >=0) {
+        if (h == 0) {
+            if (a[x] == '1' && b[y] == '1') {
+                res = '0' + res;
+                h = 1;
+            }
+            else if ((a[x] == '1' && b[y] == '0') || (a[x] == '0' && b[y] == '1')) {
+                res = '1' + res;
+
+            }
+            else {
+                res = '0' + res;
+
+            }
+            x--,y--;
+
+        }
+        else {
+            if (a[x] == '1' && b[y] == '1') {
+                res = '1' + res;
+                // a = 1;
+            }
+            else if (a[x] == '1' && b[y] == '0' || a[x] == '0' && b[y] == '1') {
+                res = '0' + res;
+
+            }
+            else {
+                res = '1' + res;
+                h=0;
+
+            }
+           x--,y--;
+
+        }
+    }
+//rest of x
+    while(x>=0){
+        if(h==1)
+        {
+            if(a[x]=='1')
+            {
+                res='0'+res;
+            }
+            else{
+              res='1'+res;
+            h=0;
+            }
+            x--;
+        }
+        else
+        {
+            if(a[x]=='1')
+            {
+                res='1'+res;
+            }
+            else{
+              res='0'+res;
+            }
+            x--;
+
+        }
+    }
+
+    // rest of y
+
+    while(y>=0){
+        if(h==1)
+        {
+            if(b[y]=='1')
+            {
+                res='0'+res;
+            }
+            else{
+              res='1'+res;
+            h=0;
+            }
+            y--;
+        }
+        else
+        {
+            if(b[y]=='1')
+            {
+                res='1'+res;
+            }
+            else{
+              res='0'+res;
+            }
+            y--;
+
+        }
+    }
+
+    // if hasil remaining
+    if(h==1){
+        return res='1'+res;
+    }
+    else
+    {
+        return res;
+    }
+};
+
+
+// fast using special menthod
+let str1 = "101010"; 
+let str2 = "1011"; 
+let sum = ( 
+    parseInt(str1, 2) + 
+    parseInt(str2, 2) 
+).toString(2);
+
+//another 
+
+let str1 = "101010"; 
+let str2 = "1011"; 
+let sum = (a, b) => { 
+	let decSum = 
+		BigInt(`0b${a}`) + 
+		BigInt(`0b${b}`); 
+	return decSum.toString(2); 
+}; 
+console.log(sum(str1, str2)); 
+
+// let decSum = BigInt(0b${a}) + BigInt(0b${b});: This line calculates the sum of the decimal equivalents of the binary strings a and b. It uses the BigInt constructor to create BigInt values from binary strings. The 0b prefix is used to indicate that the following string is in binary format.
+    </script>
+</body>
+</html>

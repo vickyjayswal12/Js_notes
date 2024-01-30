@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+        <script>
+//    async function always return promise either return new promise in function or return anything else value in async function
+        //  exm:
+        async function fun(){
+            return "hello"; //it will return rapped in side of promise
+        }
+        let a=fun()
+        // console.log(a);//return promise
+        ///how to find data from promise
+        // a.then((data)=>{console.log("data = ",data)})
+
+
+        //it will also return promise:---
+
+        let promise=new Promise((resolve,rejected)=>
+        {
+            resolve("promise is resolved");  //in real world promise not resolved in imiditely
+            //for error
+            // rejected("promise is rejected")
+
+        })
+
+        async function fun1(){
+            return promise;
+        }
+        let b=fun()
+        // console.log(b);//return promise
+        ///how to find data from promise
+        // b.then((data)=>{console.log("data = ",data)})
+
+
+        // note:---
+        // callback is use to create asyncronous operation
+        // promise is use to handle async operation 
+        // and async await  use to handle promises 
+
+        // aynct await is use to do operation one by one means make syncronous 
+        // in async await function one after one promise is resolved 
+        // let examle in  ecommerce first crete order by cart and than return order id and than affter through order id payment should proceed
+
+        // async function order{
+                           //all the asynch operation start in peralar but but program eexcute one by one it work for  use await
+        //     let order_id=await ordercreateapi(card)
+        //     let payment_id=await paymentcreateapi(order_id,amount) // it will wait until order_id not solved
+        // }
+
+        //how to handle promise
+
+        async function fun3() {
+            var res=await promise; //23 lines custom promise result will store in res
+            console.log(res);
+        }
+        // fun3()
+
+        // await is keyword which can use by in side async functin
+       
+        // difference between .than and asynct await handle promise
+     
+
+        let promise1=new Promise((res,rej)=>{
+            setTimeout(()=>{
+                res("promise 1 is solved");
+            },10000);
+        })
+
+        let promise2=new Promise((res,rej)=>{
+            setTimeout(()=>{
+                res("promise2 is solved");
+            },15000);
+        })
+
+        let promise3=new Promise((res,rej)=>{
+            setTimeout(()=>{
+                res("promise3 is solved");
+            },5000);
+        })
+
+        function fun4(){
+            let p=promise1;
+            p.than((res)=>{console.log(res)});
+            // console.log(p)
+            console.log("hello")//not wait
+        }
+        
+        // fun4();
+
+        async function fun5(){
+            console.log("before");
+            //after 10s
+            let b=await promise1
+            console.log("hi")
+            console.log(b);////wait for the promise to be resolve then print this statement
+            console.log("world");//wait for the promise to be resolve then print this statement
+
+            // all promise run paralary //it can be understand by callstack in js and event loop
+            //turant
+            let c=await promise1;
+            console.log(c);
+            //more 5s
+            let d=await promise2;
+            console.log(d);
+            //turant
+            let e=await promise3;
+            console.log(e);
+        }
+        fun5();
+        //it will be achieve trough .than but it make promise(callback) hell and make complecated
+
+
+        // how to work fetch api method in js
+        // let p=await fetch() //return response object which have readable body it is also promise
+        // let data = await p.json() //readble response to convert in json it is also promise this is object
+
+
+        //erro handle done using try and catch in async function all await write in try and if error occor handle in catch
+        //also we use .catch mathod in async function becouse it will always return promise
+// exm
+fun5().catch((err)=>{
+    console.log(err);
+})
+
+
+//workin of js program using js engine ,web api,call back,event loop
+// js engine only have call stack
+// web api can be fetch ,setTimeout,console.log.dom etc
+// it will learn through namaste js episode 15
+       </script>
+
+    </body>
+</html>

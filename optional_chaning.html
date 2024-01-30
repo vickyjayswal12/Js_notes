@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+           //optional chaining:---
+
+      // The optional chaining operator ?. takes the reference to its left and checks if it is undefined or null. If the reference is either of these nullish(null or undefine) values, the checks will stop and return undefined. Otherwise, the chain of access checks will continue down the happy path to the final value
+      //if answer not find than it will return undefined instead of error
+      // exm
+      let user = {
+        name: "John Doe",
+        dog: {
+          name: "tommy",
+        },
+      };
+      let Value = user.dog && user.dog.name; //first check dog key have or not than if have than assign value
+      let Value1 = user.dog?.name; //same as upper line
+      console.log(Value, Value1);
+
+      // If the item to the left of ?? is nullish, the item to the right(of ??) will be returned.
+      // exm
+      // const meal = menu.breakfast?.waffles ?? "No Waffles Found."
+      let user1 = {
+        name: "John Doe",
+      };
+      let Value2 = user1.dog?.name ?? "sheru";
+      // console.log(Value2);
+
+      //nullis operator:====
+      // The ?? operator returns the first argument if it is not nullish (null or undefined). Otherwise it returns the second.
+      // exm
+      let name = null;
+      let name1="vj"
+      let text6 = "missing";
+      let result = name ?? text6;
+      let result1 = name1 ?? text6;
+      // console.log(result);
+      // console.log(result1);
+    </script>
+</body>
+</html>

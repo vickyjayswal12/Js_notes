@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <link rel="stylesheet" href="temp.css">
+        <style>
+#parent{
+    height: 100px;
+    width: 100px;
+    background-color: blue;
+    /* opacity: 0.5; */
+
+}
+#child{
+    height: 50px;
+    width: 50px;
+    background-color:red;
+    background-image: url(map.jpg);
+}
+
+#temp{
+    height: 50px;
+    width: 50px;
+    background-color:red;
+    /* background-image: url(map.jpg); */
+    overflow: hidden;
+}
+#temp img{
+    height: 100%;
+    width: 100%;
+}
+#img{
+    height: 500px;
+    width: 500px;
+     background-image: url(about/a4.jpg);
+}
+    </style>
+    </head>
+    <body>
+
+        <!-- prioty in css:-- inline>internal>external -->
+        <div style="background-color: aqua;" id="parent">
+            parent element
+            <div id="child">
+                child element
+            </div>
+        </div>
+        <div id="temp">
+            <img src="about/a4.jpg" alt>
+        </div>
+        <div id="img">
+
+        </div>
+    </body>
+</html>
